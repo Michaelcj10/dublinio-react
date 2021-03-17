@@ -1,12 +1,15 @@
 {
   "name": "dublinio-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/index.js",
   "private": false,
-  "files": [ "dist", "README.md" ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "repository": {
-      "type": "git",
-      "url": "https://github.com/Michaelcj10/dublinio-react"
+    "type": "git",
+    "url": "https://github.com/Michaelcj10/dublinio-react"
   },
   "dependencies": {
     "@storybook/addon-storyshots": "^6.1.21",
@@ -14,7 +17,6 @@
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
     "@types/styled-components": "^5.1.9",
-
     "react-test-renderer": "^17.0.1",
     "styled-components": "^5.2.1",
     "tslint": "^6.1.3",
