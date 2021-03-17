@@ -71,7 +71,7 @@ interface Props {
   loading?: boolean;
 }
 
-export const PrimaryButton = (props: Props) => {
+export const Button = (props: Props) => {
   const { type, text, onClick, fullWidth, disabled, loading } = props;
 
   return (

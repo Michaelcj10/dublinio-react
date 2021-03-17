@@ -1,11 +1,11 @@
 import React from "react";
 
-import { PrimaryButton } from "./Button";
+import { Button } from "./Button";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: "Atoms/Buttons",
-  component: PrimaryButton,
+  component: Button,
   argTypes: {
     text: { control: "text" },
     type: { control: "text" },
@@ -16,7 +16,7 @@ export default {
 };
 
 const Template = (args) => {
-  return <PrimaryButton {...args} />;
+  return <Button {...args} />;
 };
 
 export const Primary = Template.bind({});
