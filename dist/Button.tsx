@@ -71,7 +71,7 @@ interface Props {
   loading?: boolean;
 }
 
-export const Button = (props: Props) => {
+export default function Button(props: Props) {
   const { type, text, onClick, fullWidth, disabled, loading } = props;
 
   return (
@@ -85,4 +85,4 @@ export const Button = (props: Props) => {
       {loading ? "..." : text}
     </ButtonStyle>
   );
-};
+}
