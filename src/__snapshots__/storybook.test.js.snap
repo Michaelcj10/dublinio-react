@@ -1,10 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Atoms/Buttons Primary 1`] = `
+exports[`Storyshots Example/Button Default 1`] = `
 <button
-  className="sc-bdfBwQ ewgjwJ"
-  type="button"
+  className="sc-bdfBwQ dJwSRL"
 >
-  My Button
+  Button
 </button>
 `;
