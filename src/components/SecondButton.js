@@ -25,16 +25,11 @@ const Dots = keyframes`
 `;
 
 const ButtonStyle = styled.button`
-  background-image: linear-gradient(
-    to right,
-    #70bafe 0,
-    #998dff 51%,
-    #70bafe 100%
-  );
-  color: #fff;
+  background: transparent;
+  color: #998dff;
   border: none;
-  height: 35px;
   font-family: sans-serif;
+  height: 35px;
   font-size: 16px;
   font-weight: 600;
   border-radius: 4px;
@@ -42,7 +37,7 @@ const ButtonStyle = styled.button`
   cursor: ${(props) =>
     props.disabledBtn || props.loadingBtn ? "not-allowed" : "pointer"};
   opacity: ${(props) => (props.disabledBtn ? ".6" : "1")};
-  border: 2px solid rgba(204, 241, 255, 0.5);
+  border: 2px solid #998dff;
   transition: all 0.5s;
   animation: ${(props) =>
     props.loadingBtn
@@ -61,7 +56,7 @@ const ButtonStyle = styled.button`
   }
 `;
 
-export default function Button({
+export default function SecondButton({
   type,
   text,
   onClick,
@@ -82,7 +77,7 @@ export default function Button({
   );
 }
 
-Button.propTypes = {
+SecondButton.propTypes = {
   fullWidth: PropTypes.bool,
   loading: PropTypes.bool,
   disabled: PropTypes.bool,
@@ -90,6 +85,6 @@ Button.propTypes = {
   onClick: PropTypes.func,
 };
 
-Button.defaultProps = {
+SecondButton.defaultProps = {
   onClick: undefined,
 };

@@ -1,9 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Example/Button Default 1`] = `
+exports[`Storyshots Example/Button Link 1`] = `
+<a
+  className="sc-dlfnbm gzpUSB"
+>
+  Button
+</a>
+`;
+
+exports[`Storyshots Example/Button Primary 1`] = `
 <button
-  className="sc-bdfBwQ dJwSRL"
+  className="sc-bdfBwQ ojzHN"
 >
   Button
 </button>
+`;
+
+exports[`Storyshots Example/Button Second 1`] = `
+<button
+  className="sc-gsTCUz kfzsdD"
+>
+  Button
+</button>
+`;
+
+exports[`Storyshots Example/Input Primary 1`] = `
+<div
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <input
+    className="sc-hKgILt dHYOst"
+    defaultValue="Button"
+    disabled={false}
+    onBlur={[Function]}
+    onFocus={[Function]}
+  />
+  
+</div>
 `;
