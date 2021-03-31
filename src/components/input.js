@@ -36,7 +36,8 @@ const Error = styled.span`
   font-size: 12px;
 `;
 const Label = styled.span`
-  color: ${(props) => (props.focused ? "#007bff" : "#998dff")};
+  color: ${(props) =>
+    props.haserror ? "red" : props.focused ? "#007bff" : "#998dff"};
   font-family: sans-serif;
   font-size: 12px;
   transition: all 0.5s;
@@ -57,7 +58,7 @@ export default function Input({
   return (
     <Fragment>
       {label && (
-        <Label disabled={disabled} focused={focused}>
+        <Label disabled={disabled} focused={focused} haserror={error !== ""}>
           {label}
         </Label>
       )}
