@@ -17,6 +17,7 @@ const InputStyle = styled.input`
   width: 100%;
   color: #716f6f;
   border-color: ${(props) => (props.haserror ? "red" : "#998dff")};
+  margin-top: ${(props) => (props.haslabel ? "5px" : "0px")};
 
   &:focus {
     border-color: ${(props) => (props.haserror ? "red" : "#007bff")};
@@ -39,6 +40,8 @@ const Label = styled.span`
   font-family: sans-serif;
   font-size: 12px;
   transition: all 0.5s;
+  margin-bottom: 5px;
+  margin-left: 1px;
 `;
 export default function Input({
   text,
@@ -52,11 +55,7 @@ export default function Input({
 
   return (
     <Fragment>
-      {label && (
-        <Label data-focu={focused} focused={focused}>
-          {label}
-        </Label>
-      )}
+      {label && <Label focused={focused}>{label}</Label>}
       <InputStyle
         onFocus={() => {
           setFocused(true);
@@ -70,6 +69,7 @@ export default function Input({
         onChange={onChange}
         focused={focused}
         disabled={disabled}
+        haslabel={label && label !== ""}
       />
       {error && <Error>{error}</Error>}
     </Fragment>
