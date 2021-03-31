@@ -34,6 +34,7 @@ const Error = styled.span`
   color: #e23030;
   font-family: sans-serif;
   font-size: 12px;
+  opacity: ${(props) => (props.disabled ? "0.4" : "1")};
 `;
 const Label = styled.span`
   color: ${(props) =>
@@ -43,7 +44,7 @@ const Label = styled.span`
   transition: all 0.5s;
   margin-bottom: 5px;
   margin-left: 1px;
-  opacity: ${(props) => (props.disabled ? "0.7" : "1")};
+  opacity: ${(props) => (props.disabled ? "0.4" : "1")};
 `;
 export default function Input({
   text,
@@ -77,7 +78,7 @@ export default function Input({
         disabled={disabled}
         haslabel={label && label !== ""}
       />
-      {error && <Error>{error}</Error>}
+      {error && <Error disabled={disabled}>{error}</Error>}
     </Fragment>
   );
 }
