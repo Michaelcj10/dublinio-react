@@ -28,7 +28,7 @@ const InputStyle = styled.input`
   }
 
   cursor: ${(props) => (props.disabled ? "not-allowed" : "initial")};
-  opacity: ${(props) => (props.disabled ? "0.7" : "1")};
+  opacity: ${(props) => (props.disabled ? "0.4" : "1")};
 `;
 const Error = styled.span`
   color: #e23030;
