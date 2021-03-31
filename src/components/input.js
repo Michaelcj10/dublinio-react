@@ -42,6 +42,7 @@ const Label = styled.span`
   transition: all 0.5s;
   margin-bottom: 5px;
   margin-left: 1px;
+  opacity: ${(props) => (props.disabled ? "0.7" : "1")};
 `;
 export default function Input({
   text,
@@ -55,7 +56,11 @@ export default function Input({
 
   return (
     <Fragment>
-      {label && <Label focused={focused}>{label}</Label>}
+      {label && (
+        <Label disabled={disabled} focused={focused}>
+          {label}
+        </Label>
+      )}
       <InputStyle
         onFocus={() => {
           setFocused(true);
