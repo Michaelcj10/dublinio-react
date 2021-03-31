@@ -1,5 +1,3 @@
-# [Dublinio React]
-
 # Getting Started with Dublinio React
 
 ## How to install
