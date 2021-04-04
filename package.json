@@ -2,6 +2,11 @@
   "name": "dublinio-react",
   "version": "0.1.24",
   "main": "dist/index.js",
+  "keywords": [
+    "react",
+    "react-component",
+    "javascript"
+  ],
   "private": false,
   "files": [
     "dist",
