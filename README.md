@@ -2,9 +2,9 @@
 
 ## How to install
 
-> npm install dublinio-react
+> **npm install dublinio-react**
 
-**dublinio-react** is a set of React components that follow the **Dublinio** web design palette.
+**dublinio-react** is a set of React components that follow the [Dublinio](https://dublinio.com/) web design palette.
 Check out our documentation site for live examples.
 
 ## Required Knowledge

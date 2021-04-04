@@ -18,9 +18,11 @@ const InputStyle = styled.input`
   color: #716f6f;
   border-color: ${(props) => (props.haserror ? "red" : "#998dff")};
   margin-top: ${(props) => (props.haslabel ? "5px" : "0px")};
+  width: 90%;
 
   &:focus {
     border-color: ${(props) => (props.haserror ? "red" : "#007bff")};
+    width: 100%;
   }
 
   ::placeholder {
