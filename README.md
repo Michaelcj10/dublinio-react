@@ -2,7 +2,7 @@
 
 ## How to install
 
-> - npm install dublinio-react
+> npm install dublinio-react
 
 **dublinio-react** is a set of React components that follow the **Dublinio** web design palette.
 Check out our documentation site for live examples.
@@ -17,7 +17,6 @@ over to [reactjs documentation](https://reactjs.org/) and start learning!
 Unlike many component libraries you do not need to provide a theme object. Simply import the components as you wish.
 
 ```
-  import React from 'react';
   import { Button } from "dublinio-react";
 
   <Button
