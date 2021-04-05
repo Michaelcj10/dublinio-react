@@ -22,7 +22,7 @@ Unlike many component libraries you do not need to provide a theme object. Simpl
   <Button
       text="My button"
       type="button"
-      loading=
+      loading
       onClick={() => {
             console.log("you clicked the button!");
       }}

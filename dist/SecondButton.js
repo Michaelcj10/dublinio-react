@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = Button;
+exports.default = SecondButton;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -25,7 +25,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var Dots = (0, _styledComponents.keyframes)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  0%, 20% {\n      color: rgba(0,0,0,0);\n      text-shadow:\n        .25em 0 0 rgba(0,0,0,0),\n        .5em 0 0 rgba(0,0,0,0);}\n    40% {\n      color: white;\n      text-shadow:\n        .25em 0 0 rgba(0,0,0,0),\n        .5em 0 0 rgba(0,0,0,0);}\n    60% {\n      text-shadow:\n        .25em 0 0 white,\n        .5em 0 0 rgba(0,0,0,0);}\n    80%, 100% {\n      text-shadow:\n        .25em 0 0 white,\n        .5em 0 0 white;}}\n"])));
 
-var ButtonStyle = _styledComponents.default.button(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  background-image: linear-gradient(\n    to right,\n    #70bafe 0,\n    #998dff 51%,\n    #70bafe 100%\n  );\n  color: #fff;\n  border: none;\n  height: 35px;\n  font-family: sans-serif;\n  font-size: 16px;\n  font-weight: 600;\n  border-radius: 4px;\n  min-width: ", ";\n  cursor: ", ";\n  opacity: ", ";\n  border: 2px solid rgba(204, 241, 255, 0.5);\n  transition: all 0.5s;\n  animation: ", ";\n  &:hover {\n    box-shadow: 0px 1px 1px -2px rgb(0 0 0 / 12%),\n      0px 2px 2px 0px rgb(0 0 0 / 10%), 0px 1px 5px 0px rgb(0 0 0 / 12%);\n    opacity: ", ";\n  }\n  &:focus,\n  &:hover {\n    outline: none;\n  }\n"])), function (props) {
+var ButtonStyle = _styledComponents.default.button(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  background: transparent;\n  color: #998dff;\n  border: none;\n  font-family: sans-serif;\n  height: 35px;\n  font-size: 16px;\n  font-weight: 600;\n  border-radius: 4px;\n  min-width: ", ";\n  cursor: ", ";\n  opacity: ", ";\n  border: 2px solid #998dff;\n  transition: all 0.5s;\n  animation: ", ";\n  &:hover {\n    box-shadow: 0px 1px 1px -2px rgb(0 0 0 / 12%),\n      0px 2px 2px 0px rgb(0 0 0 / 10%), 0px 1px 5px 0px rgb(0 0 0 / 12%);\n    opacity: ", ";\n  }\n  &:focus,\n  &:hover {\n    outline: none;\n  }\n"])), function (props) {
   return props.fullWidthBtn ? "100%" : "100px";
 }, function (props) {
   return props.disabledBtn || props.loadingBtn ? "not-allowed" : "pointer";
@@ -37,7 +37,7 @@ var ButtonStyle = _styledComponents.default.button(_templateObject2 || (_templat
   return props.disabledBtn ? ".6" : ".9";
 });
 
-function Button(_ref) {
+function SecondButton(_ref) {
   var type = _ref.type,
       text = _ref.text,
       onClick = _ref.onClick,
@@ -53,13 +53,13 @@ function Button(_ref) {
   }, loading ? "..." : text);
 }
 
-Button.propTypes = {
+SecondButton.propTypes = {
   fullWidth: _propTypes.default.bool,
   loading: _propTypes.default.bool,
   disabled: _propTypes.default.bool,
   text: _propTypes.default.string.isRequired,
   onClick: _propTypes.default.func
 };
-Button.defaultProps = {
+SecondButton.defaultProps = {
   onClick: undefined
 };
