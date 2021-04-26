@@ -7,5 +7,15 @@ import Input from "./input";
 import RadioButton from "./radio";
 import Panel from "./panel";
 import Badge from "./Badge";
+import ImageLoader from "./imageLoader";
 
-export { Button, SecondButton, LinkButton, Input, RadioButton, Panel, Badge };
+export {
+  Button,
+  SecondButton,
+  LinkButton,
+  Input,
+  RadioButton,
+  Panel,
+  Badge,
+  ImageLoader,
+};
