@@ -1,28 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import styled, { css, keyframes } from "styled-components";
-
-const Dots = keyframes`
-  0%, 20% {
-      color: rgba(0,0,0,0);
-      text-shadow:
-        .25em 0 0 rgba(0,0,0,0),
-        .5em 0 0 rgba(0,0,0,0);}
-    40% {
-      color: white;
-      text-shadow:
-        .25em 0 0 rgba(0,0,0,0),
-        .5em 0 0 rgba(0,0,0,0);}
-    60% {
-      text-shadow:
-        .25em 0 0 white,
-        .5em 0 0 rgba(0,0,0,0);}
-    80%, 100% {
-      text-shadow:
-        .25em 0 0 white,
-        .5em 0 0 white;}}
-`;
+import styled from "styled-components";
 
 const ButtonStyle = styled.button`
   background: transparent;
@@ -39,12 +18,6 @@ const ButtonStyle = styled.button`
   opacity: ${(props) => (props.disabledBtn ? ".6" : "1")};
   border: 2px solid #998dff;
   transition: all 0.5s;
-  animation: ${(props) =>
-    props.loadingBtn
-      ? css`
-          ${Dots} 1s steps(5, end) infinite
-        `
-      : "none"};
   &:hover {
     box-shadow: 0px 1px 1px -2px rgb(0 0 0 / 12%),
       0px 2px 2px 0px rgb(0 0 0 / 10%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
@@ -53,6 +26,10 @@ const ButtonStyle = styled.button`
   &:focus,
   &:hover {
     outline: none;
+  }
+
+  &:active {
+    opacity: 0.6;
   }
 `;
 
@@ -69,10 +46,10 @@ export default function SecondButton({
       type={type}
       onClick={onClick}
       fullWidthBtn={fullWidth}
-      disabledBtn={disabled}
+      disabledBtn={disabled || loading}
       loadingBtn={loading}
     >
-      {loading ? "..." : text}
+      {text}
     </ButtonStyle>
   );
 }

@@ -10,7 +10,7 @@ const ButtonStyle = styled.div`
   border-radius: 50%;
   transition: all 0.5s;
   background: ${(props) => (props.toggledOn ? "transparent" : "#ececec")};
-  border: 2px solid ${(props) => (props.toggledOn ? "#70bafe" : "#9c9b9b")};
+  border: 2px solid ${(props) => (props.toggledOn ? "#70bafe" : "#d8d8d8")};
   opacity: ${(props) => (props.disabled ? ".6" : "1")};
 `;
 const Wrap = styled.div`
@@ -20,7 +20,7 @@ const Wrap = styled.div`
   position: relative;
 
   > * {
-    cursor: pointer;
+    cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
     font-family: sans-serif;
     text-transform: lowercase;
   }
@@ -32,18 +32,21 @@ const Toggle = styled.div`
   position: absolute;
   left: 6px;
   transition: all 0.5s;
-  background: ${(props) => (props.toggledOn ? "#70bafe" : "#9c9b9b")};
+  background: ${(props) => (props.toggledOn ? "#70bafe" : "#d8d8d8")};
   opacity: ${(props) => (props.disabled ? ".6" : "1")};
 `;
 
 export default function RadioButton({ text, onClick, toggledOn, disabled }) {
   return (
-    <Wrap onClick={onClick}>
-      <ButtonStyle
-        toggledOn={toggledOn}
-        onClick={onClick}
-        disabled={disabled}
-      />
+    <Wrap
+      disabled={disabled}
+      onClick={() => {
+        if (!disabled) {
+          onClick();
+        }
+      }}
+    >
+      <ButtonStyle toggledOn={toggledOn} disabled={disabled} />
       <Toggle toggledOn={toggledOn} disabled={disabled} />
       <span>{text}</span>
     </Wrap>
