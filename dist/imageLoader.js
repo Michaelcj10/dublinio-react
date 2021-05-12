@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = Input;
+exports.default = ImageLoader;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -13,7 +13,7 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _templateObject, _templateObject2, _templateObject3;
+var _templateObject, _templateObject2;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -35,76 +35,64 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var InputStyle = _styledComponents.default.input(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  height: 40px;\n  padding: 0 10px;\n  outline: none;\n  border-bottom: 2px solid #998dff;\n  background: ", ";\n  font-size: 16px;\n  border-top: none;\n  border-left: none;\n  border-right: none;\n  transition: all 0.5s;\n  color: #716f6f;\n  border-color: ", ";\n  margin-top: ", ";\n  width: 90%;\n\n  &:focus {\n    border-color: ", ";\n    width: 100%;\n  }\n\n  ::placeholder {\n    color: #b3b3b3;\n  }\n\n  cursor: ", ";\n  opacity: ", ";\n"])), function (props) {
-  return props.focused ? "white" : "whitesmoke";
-}, function (props) {
-  return props.haserror ? "red" : "#998dff";
-}, function (props) {
-  return props.haslabel ? "5px" : "0px";
-}, function (props) {
-  return props.haserror ? "red" : "#007bff";
-}, function (props) {
-  return props.disabled ? "not-allowed" : "initial";
-}, function (props) {
-  return props.disabled ? "0.4" : "1";
-});
+var ImageSkeleton = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  background: linear-gradient(to right, rgb(236, 233, 230), rgb(255, 255, 255));\n  position: absolute;\n  top: 0px;\n"])));
 
-var Error = _styledComponents.default.span(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  color: #e23030;\n  font-family: sans-serif;\n  font-size: 12px;\n  opacity: ", ";\n"])), function (props) {
-  return props.disabled ? "0.4" : "1";
-});
+var Wrap = _styledComponents.default.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  position: relative;\n"])));
 
-var Label = _styledComponents.default.span(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  color: ", ";\n  font-family: sans-serif;\n  font-size: 12px;\n  transition: all 0.5s;\n  margin-bottom: 5px;\n  margin-left: 1px;\n  opacity: ", ";\n"])), function (props) {
-  return props.haserror ? "red" : props.focused ? "#007bff" : "#998dff";
-}, function (props) {
-  return props.disabled ? "0.4" : "1";
-});
-
-function Input(_ref) {
-  var text = _ref.text,
-      placeholder = _ref.placeholder,
-      error = _ref.error,
-      onChange = _ref.onChange,
-      label = _ref.label,
-      disabled = _ref.disabled;
+function ImageLoader(_ref) {
+  var alt = _ref.alt,
+      src = _ref.src,
+      width = _ref.width,
+      height = _ref.height,
+      lazy = _ref.lazy;
 
   var _useState = (0, _react.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
-      focused = _useState2[0],
-      setFocused = _useState2[1];
+      loaded = _useState2[0],
+      setLoaded = _useState2[1];
 
-  return /*#__PURE__*/_react.default.createElement(_react.Fragment, null, label && /*#__PURE__*/_react.default.createElement(Label, {
-    disabled: disabled,
-    focused: focused,
-    haserror: error !== ""
-  }, label), /*#__PURE__*/_react.default.createElement(InputStyle, {
-    onFocus: function onFocus() {
-      setFocused(true);
+  var _useState3 = (0, _react.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      hasError = _useState4[0],
+      setHasError = _useState4[1];
+
+  if (hasError) {
+    return null;
+  }
+
+  return /*#__PURE__*/_react.default.createElement(Wrap, {
+    style: {
+      height: height,
+      width: width
+    }
+  }, !loaded && /*#__PURE__*/_react.default.createElement(ImageSkeleton, {
+    style: {
+      height: height,
+      width: width
+    }
+  }), /*#__PURE__*/_react.default.createElement("img", {
+    loading: lazy ? "lazy" : "eager",
+    alt: alt,
+    src: src,
+    style: {
+      height: height,
+      width: width,
+      position: "absolute",
+      top: "0px",
+      visibility: loaded ? "visible" : "hidden"
     },
-    onBlur: function onBlur() {
-      setFocused(false);
+    onLoad: function onLoad() {
+      setLoaded(true);
     },
-    haserror: error !== "",
-    placeholder: placeholder,
-    defaultValue: text,
-    onChange: onChange,
-    focused: focused,
-    disabled: disabled,
-    haslabel: label && label !== ""
-  }), error && /*#__PURE__*/_react.default.createElement(Error, {
-    disabled: disabled
-  }, error));
+    onError: function onError() {
+      setHasError(true);
+    }
+  }));
 }
 
-Input.propTypes = {
-  text: _propTypes.default.string.isRequired,
-  placeholder: _propTypes.default.string,
-  label: _propTypes.default.string,
-  error: _propTypes.default.string,
-  onChange: _propTypes.default.func,
-  disabled: _propTypes.default.bool
+ImageLoader.propTypes = {
+  alt: _propTypes.default.string.isRequired
 };
-Input.defaultProps = {
-  text: "something",
-  error: "",
-  disabled: false
+ImageLoader.defaultProps = {
+  lazy: false
 };

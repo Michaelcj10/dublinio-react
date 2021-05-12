@@ -39,6 +39,18 @@ Object.defineProperty(exports, "Panel", {
     return _panel.default;
   }
 });
+Object.defineProperty(exports, "Badge", {
+  enumerable: true,
+  get: function get() {
+    return _Badge.default;
+  }
+});
+Object.defineProperty(exports, "ImageLoader", {
+  enumerable: true,
+  get: function get() {
+    return _imageLoader.default;
+  }
+});
 
 var _Button = _interopRequireDefault(require("./Button"));
 
@@ -51,5 +63,9 @@ var _input = _interopRequireDefault(require("./input"));
 var _radio = _interopRequireDefault(require("./radio"));
 
 var _panel = _interopRequireDefault(require("./panel"));
+
+var _Badge = _interopRequireDefault(require("./Badge"));
+
+var _imageLoader = _interopRequireDefault(require("./imageLoader"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

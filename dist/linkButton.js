@@ -17,7 +17,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var ButtonStyle = _styledComponents.default.a(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  color: #998dff;\n  font-size: 14px;\n  font-weight: 900;\n  transition: all 0.5s;\n  font-weight: bold;\n  opacity: 1;\n  font-family: sans-serif;\n  cursor: pointer;\n  font-family: sans-serif;\n  &:hover {\n    opacity: 0.8;\n    text-decoration: underline;\n  }\n  &:focus,\n  &:hover {\n    outline: none;\n  }\n"])));
+var ButtonStyle = _styledComponents.default.a(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  color: #998dff;\n  font-size: 16px;\n  font-weight: 900;\n  transition: all 0.5s;\n  font-weight: bold;\n  opacity: 1;\n  cursor: pointer;\n  font-family: sans-serif;\n  position: relative;\n\n  &::after {\n    border-top: 2px solid #998dff;\n    content: \"\";\n    position: absolute;\n    right: 0;\n    bottom: 0em;\n    left: 0;\n    width: 60%;\n    transition: all 0.5s;\n  }\n\n  &:hover {\n    text-decoration: underline;\n\n    &::after {\n      width: 100%;\n    }\n  }\n  &:focus,\n  &:hover {\n    outline: none;\n  }\n"])));
 
 function LinkButton(_ref) {
   var type = _ref.type,
