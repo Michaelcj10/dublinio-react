@@ -14,7 +14,6 @@ const InputStyle = styled.input`
   border-left: none;
   border-right: none;
   transition: all 0.5s;
-  width: 100%;
   color: #716f6f;
   border-color: ${(props) => (props.haserror ? "red" : "#998dff")};
   margin-top: ${(props) => (props.haslabel ? "5px" : "0px")};
