@@ -34,6 +34,8 @@ export default function ImageLoader({ alt, src, width, height, lazy }) {
           position: "absolute",
           top: "0px",
           visibility: loaded ? "visible" : "hidden",
+          left: "0px",
+          right: "0px",
         }}
         onLoad={() => {
           setLoaded(true);
